@@ -6,6 +6,7 @@ const SEARCH_CITY = "SEARCH_CITY";
 
 const searchCityByName = cityName => {
   let apiUrl = `${WEBAPIURL}/location/search/?query=${cityName}`;
+  console.log("apiURL=", apiUrl);
   return axios.get(apiUrl);
 };
 
@@ -36,6 +37,7 @@ export const searchCity = cityName => {
   return dispatch => {
     searchCityByName(cityName)
       .then(response => {
+        console.log("response data:", response.data);
         dispatch({
           type: SEARCH_CITY,
           cities: response.data

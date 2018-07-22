@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { FormGroup, FormControl, Button, ControlLabel } from "react-bootstrap";
 import SearchResult from "./searchResult";
 import { searchCity } from "../../reducers/homeReducer";
+import { Table } from "react-bootstrap";
 
 class Home extends Component {
   constructor(props) {
@@ -44,8 +45,28 @@ class Home extends Component {
             </FormGroup>
           </div>
         </div>
-        <div>
-          <SearchResult />
+
+        <div className="search-result">
+          <Table striped bordered condensed hover>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>First Name111</th>
+                <th>Last Name</th>
+                <th>Username</th>
+              </tr>
+            </thead>
+            <tbody>
+              {this.props.cities.map(item => {
+                return <SearchResult cityInfo={item} key={item.id} />;
+              })}
+              <tr>
+                <td>3</td>
+                <td colSpan="2">Larry the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </Table>;
         </div>
       </div>
     );
@@ -55,8 +76,12 @@ class Home extends Component {
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ searchCity }, dispatch);
 
+const mapStateToProps = state => ({
+  cities: state.homeReducer.cities
+});
+
 Home = connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Home);
 
