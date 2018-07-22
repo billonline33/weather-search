@@ -31,16 +31,24 @@ class Home extends Component {
       <div>
         <div>
           <FormGroup controlId="formBasicText">
-            <ControlLabel className={"labelStyle"}>City Name</ControlLabel>
-            <FormControl
-              type="text"
-              value={this.state.value}
-              placeholder="Enter text"
-              onChange={this.handleChange}
-            />
-            <Button bsStyle="primary" onClick={this.handleSearchClick}>
-              Search
-            </Button>
+            <div className="floatLeft">
+              <ControlLabel className={"labelStyle"}>City Name</ControlLabel>
+            </div>
+
+            <div className="floatLeft search-box">
+              <FormControl
+                type="text"
+                value={this.state.value}
+                placeholder="Enter text"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="floatLeft search-button">
+              <Button bsStyle="primary" onClick={this.handleSearchClick}>
+                Search
+              </Button>
+            </div>
+            <div>&nbsp;</div>
           </FormGroup>
         </div>
 
@@ -60,11 +68,6 @@ class Home extends Component {
                 console.log("woeid=", item.woeid);
                 return <SearchResult cityInfo={item} key2={index} />;
               })}
-              <tr>
-                <td>3</td>
-                <td colSpan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
             </tbody>
           </Table>;
         </div>

@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { history } from "../../store";
+import { withRouter } from "react-router";
 
 class SearchResult extends Component {
   constructor(props) {
@@ -10,18 +12,9 @@ class SearchResult extends Component {
   }
 
   fetchWeatherDetails(e) {
-    console.log("table row clicked");
     const cityInfo = e.currentTarget.getAttribute("data-item");
-    console.log("cityInfo000=", cityInfo);
+    history.push("/location");
   }
-
-  /*
-  fetchWeatherDetails = () => {
-    console.log("table row clicked");
-    const cityInfo = e.target.getAttribute("data-item");
-    console.log("cityInfo000=", cityInfo);
-  };
-  */
 
   render() {
     const cityInfo = this.props.cityInfo;
