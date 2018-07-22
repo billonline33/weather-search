@@ -18,31 +18,31 @@ class Location extends Component {
     return (
       <div>
         <h2>Today</h2>
-        <div>
-          <span>Max</span>
-          <span>24C</span>
+        <div className="weather-line">
+          <span className="label-text">Max</span>
+          <span className="info-text">24C</span>
         </div>
-        <div>
-          <span>Min</span>
-          <span>16C</span>
+        <div className="weather-line">
+          <span className="label-text">Min</span>
+          <span className="info-text">16C</span>
         </div>
-        <div>
-          <span>Humidity</span>
-          <span>56%</span>
+        <div className="weather-line">
+          <span className="label-text">Humidity</span>
+          <span className="info-text">56%</span>
         </div>
-        <div>
-          <span>Visibility</span>
-          <span>10.3 miles</span>
+        <div className="weather-line">
+          <span className="label-text">Visibility</span>
+          <span className="info-text">10.3 miles</span>
         </div>
-        <div>
-          <span>Pressure</span>
-          <span>1018mb</span>
+        <div className="weather-line">
+          <span className="label-text">Pressure</span>
+          <span className="info-text">1018mb</span>
         </div>
-        <div>
-          <span>Confidence</span>
-          <span>73%</span>
+        <div className="weather-line">
+          <span className="label-text">Confidence</span>
+          <span className="info-text">73%</span>
         </div>
-        <div>
+        <div className="weather-line">
           <Button
             bsStyle="primary"
             bsSize="large"

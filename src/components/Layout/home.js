@@ -29,7 +29,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <div>
+        <div className="search-header">
           <FormGroup controlId="formBasicText">
             <div className="floatLeft">
               <ControlLabel className={"labelStyle"}>City Name</ControlLabel>
@@ -56,7 +56,7 @@ class Home extends Component {
           <Table striped bordered condensed hover>
             <thead>
               <tr>
-                <th>ID</th>
+                <th className="table-header">ID</th>
                 <th>Title</th>
                 <th>Type</th>
                 <th>Latt and Long</th>

@@ -52,18 +52,28 @@
 	 SEARCH-RESULT
 --------------------------------------------------------------*/
 
+th {
+  text-align: center;
+}
+
 .search-result {
-  min-height: 600px;
   height: 100%;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
   margin-top: 100px;
-  border: #0784a0 1px solid;
 }
 
 /*------------------------------------------------------------------
 	 element
 ------------------------------------------------------------------*/
+
+.search-header {
+  width: 50%;
+  padding-top: 30px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .search-box {
   width: 150px;
@@ -75,6 +85,25 @@
   padding-top: 20px;
   padding-left: 20px;
 }
+
+/*------------------------------------------------------------------
+	 LOCARION PAGE
+------------------------------------------------------------------*/
+
+.weather-line {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.label-text {
+  font-size: large;
+  font-weight: bold;
+}
+
+.info-text {
+  margin-left: 30px;
+}
+
 /*------------------------------------------------------------------
 	 POSITION
 ------------------------------------------------------------------*/
