@@ -30,35 +30,35 @@ class Home extends Component {
     return (
       <div>
         <div>
-          <div>
-            <FormGroup controlId="formBasicText">
-              <ControlLabel className={"labelStyle"}>City Name</ControlLabel>
-              <FormControl
-                type="text"
-                value={this.state.value}
-                placeholder="Enter text"
-                onChange={this.handleChange}
-              />
-              <Button bsStyle="primary" onClick={this.handleSearchClick}>
-                Search
-              </Button>
-            </FormGroup>
-          </div>
+          <FormGroup controlId="formBasicText">
+            <ControlLabel className={"labelStyle"}>City Name</ControlLabel>
+            <FormControl
+              type="text"
+              value={this.state.value}
+              placeholder="Enter text"
+              onChange={this.handleChange}
+            />
+            <Button bsStyle="primary" onClick={this.handleSearchClick}>
+              Search
+            </Button>
+          </FormGroup>
         </div>
 
         <div className="search-result">
           <Table striped bordered condensed hover>
             <thead>
               <tr>
-                <th>#</th>
-                <th>First Name111</th>
-                <th>Last Name</th>
-                <th>Username</th>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Type</th>
+                <th>Latt and Long</th>
               </tr>
             </thead>
             <tbody>
-              {this.props.cities.map(item => {
-                return <SearchResult cityInfo={item} key={item.id} />;
+              {this.props.cities.map((item, index) => {
+                console.log("index=", index);
+                console.log("woeid=", item.woeid);
+                return <SearchResult cityInfo={item} key2={index} />;
               })}
               <tr>
                 <td>3</td>
