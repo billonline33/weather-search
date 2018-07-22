@@ -1,13 +1,15 @@
 import React, { Component } from "react";
-import { Col, Row } from "react-bootstrap";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+
 import { FormGroup, FormControl, Button, ControlLabel } from "react-bootstrap";
 import SearchResult from "./searchResult";
+import { searchCity } from "../../reducers/homeReducer";
 
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchValue: "",
       value: ""
     };
     this.handleSearchClick = this.handleSearchClick.bind(this);
@@ -16,6 +18,7 @@ class Home extends Component {
 
   handleSearchClick() {
     console.log("Search clicked");
+    this.props.searchCity(this.state.value);
   }
 
   handleChange(e) {
@@ -23,10 +26,6 @@ class Home extends Component {
   }
 
   render() {
-    var paddingTop = {
-      "padding-top": "13px"
-    };
-
     return (
       <div>
         <div>
@@ -52,5 +51,13 @@ class Home extends Component {
     );
   }
 }
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ searchCity }, dispatch);
+
+Home = connect(
+  null,
+  mapDispatchToProps
+)(Home);
 
 export default Home;

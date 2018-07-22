@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Modal, Table } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 
 class SearchResult extends Component {
   render() {
