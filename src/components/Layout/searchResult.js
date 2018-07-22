@@ -13,7 +13,7 @@ class SearchResult extends Component {
 
   fetchWeatherDetails(e) {
     const cityInfo = e.currentTarget.getAttribute("data-item");
-    history.push("/location");
+    this.props.history.push("/location");
   }
 
   render() {
@@ -34,4 +34,4 @@ class SearchResult extends Component {
   }
 }
 
-export default SearchResult;
+export default withRouter(SearchResult);
