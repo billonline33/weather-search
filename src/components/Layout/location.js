@@ -3,7 +3,7 @@ import { history } from "../../store";
 import { Button } from "react-bootstrap";
 import { withRouter } from "react-router";
 
-class Location1 extends Component {
+class Location extends Component {
   constructor(props) {
     super(props);
 
@@ -56,4 +56,4 @@ class Location1 extends Component {
   }
 }
 
-export default withRouter(Location1);
+export default withRouter(Location);
