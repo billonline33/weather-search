@@ -56,7 +56,7 @@ class Home extends Component {
           <Table striped bordered condensed hover>
             <thead>
               <tr>
-                <th className="table-header">ID</th>
+                <th>ID</th>
                 <th>Title</th>
                 <th>Type</th>
                 <th>Latt and Long</th>

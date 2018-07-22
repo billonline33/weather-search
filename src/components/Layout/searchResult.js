@@ -1,6 +1,9 @@
 import React, { Component } from "react";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 import { history } from "../../store";
 import { withRouter } from "react-router";
+import { loadWeather } from "../../reducers/homeReducer";
 
 class SearchResult extends Component {
   constructor(props) {
@@ -12,7 +15,8 @@ class SearchResult extends Component {
   }
 
   fetchWeatherDetails(e) {
-    const cityInfo = e.currentTarget.getAttribute("data-item");
+    const woeid = e.currentTarget.getAttribute("data-item");
+    this.props.loadWeather(woeid);
     this.props.history.push("/location");
   }
 
@@ -33,5 +37,13 @@ class SearchResult extends Component {
     );
   }
 }
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ loadWeather }, dispatch);
+
+SearchResult = connect(
+  null,
+  mapDispatchToProps
+)(SearchResult);
 
 export default withRouter(SearchResult);
