@@ -3,6 +3,8 @@ import { history } from "../../store";
 import { Button } from "react-bootstrap";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { searchCity, resetWeatherData } from "../../reducers/homeReducer";
 
 class Location extends Component {
   constructor(props) {
@@ -12,6 +14,10 @@ class Location extends Component {
 
   handleBackButtonClick() {
     this.props.history.push("/");
+  }
+
+  componentWillUnmount() {
+    this.props.resetWeatherData();
   }
 
   render() {
@@ -87,9 +93,12 @@ const mapStateToProps = state => ({
   city: state.homeReducer.city
 });
 
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ resetWeatherData }, dispatch);
+
 Location = connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(Location);
 
 export default withRouter(Location);

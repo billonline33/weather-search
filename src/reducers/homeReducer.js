@@ -4,6 +4,7 @@ const WEBAPIURL = "https://www.metaweather.com/api";
 const REQUEST_FAILED = "REQUEST_FAILED";
 const SEARCH_CITY = "SEARCH_CITY";
 const LOAD_WEATHER = "LOAD_WEATHER";
+const RESET_WEATHER_DATA = "RESET_WEATHER_DATA";
 
 const searchCityByName = cityName => {
   let apiUrl = `${WEBAPIURL}/location/search/?query=${cityName}`;
@@ -19,7 +20,9 @@ const loadWeatherAPI = woeid => {
 
 const initialState = {
   searchValue: "",
-  cities: []
+  cities: [],
+  weather: null,
+  city: null
 };
 
 export default (state = initialState, action) => {
@@ -35,6 +38,13 @@ export default (state = initialState, action) => {
         ...state,
         weather: action.weather,
         city: action.city
+      };
+
+    case RESET_WEATHER_DATA:
+      return {
+        ...state,
+        weather: null,
+        city: null
       };
 
     case REQUEST_FAILED: {
@@ -64,6 +74,14 @@ export const loadWeather = woeid => {
           error
         });
       });
+  };
+};
+
+export const resetWeatherData = () => {
+  return dispatch => {
+    dispatch({
+      type: RESET_WEATHER_DATA
+    });
   };
 };
 
