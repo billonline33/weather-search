@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { history } from "../../store";
 import { withRouter } from "react-router";
 import { loadWeather } from "../../reducers/homeReducer";
 

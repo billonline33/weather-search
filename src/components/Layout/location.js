@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { history } from "../../store";
 import { Button } from "react-bootstrap";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
